@@ -1,45 +1,65 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         <meta name ="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <link href="http://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+        <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/montserrat" >
         
         <title>Jaden Noronha</title>
+
         <script>
             function donav(target) {
                 document.location.href = target;
             }
+
+            function dynamicscroll() {
+                let body = document.querySelector("body");
+                let nav = document.querySelector("nav");
+                let navbar = document.getElementById("navbar");
+                let intro = document.getElementById("Home");
+                this.scrollY > (intro.offsetTop + intro.offsetHeight - 50) ? navbar.style.backgroundColor = "#D5573B" : navbar.style.backgroundColor = "";
+            }
+            window.addEventListener("scroll", dynamicscroll , false);
         </script>
+
     </head>
 
     <body>
-        <!-- CHANGE FONT FOR HEADING-->
 
-        <table class="navbar" align="center">
-            <tr>
-                <td onclick="donav('index.html#Home');" class="nav"><b>About Me</b></td>
-                <td onclick="donav('index.html#Skills');"class="nav"><b>Skills</b></td>
-                <td onclick="donav('index.html#Projects');" class="nav"><b>Projects</b></td>
-                <td onclick="donav('https://www.linkedin.com/in/jaden-noronha/');" class="nav"><b>LinkedIn</b></td>
-                <td onclick="donav('https://github.com/jpnoro2003');" class="nav"><b>GitHub</b></td>
-            </tr>
-        </table>
+        <nav>
+            <table id="navbar" align="center">
+                <tr>
+                    <td onclick="donav('index.html#About_Me');" class="nav"><b>About Me</b></td>
+                    <td onclick="donav('index.html#Skills');"class="nav"><b>Skills</b></td>
+                    <td onclick="donav('index.html#Projects');" class="nav"><b>Projects</b></td>
+                    <td onclick="donav('https://www.linkedin.com/in/jaden-noronha/');" class="nav"><b>LinkedIn</b></td>
+                    <td onclick="donav('https://github.com/jpnoro2003');" class="nav"><b>GitHub</b></td>
+                </tr>
+            </table>
+        </nav>
+        
+        <div id="Home">
+            <br><br><br><br><br>
+            <b><p style="font-family: 'montserrat'; font-size: 7vw" align="center">Jaden Noronha</p></b>
+            <p style="font-family: 'montserrat'; font-size: 4vw" align="center">Mathematics Student</p>
+            <br><br><br><br><br><br>
+        </div>
+        
 
-        <p id="Home">            </p> <!-- SPACER -->
-        <p style="font-family: 'montserrat'; font-size: 7vw" align="center">Jaden Noronha</p>
-
-        <table id="About_Me" align="center" width="80%">
+        <table id="About_Me" align="center" width="90%">
             <tr>
                 <td>
-                    <img src="Me.jpeg" align="center" style="max-width: 90%">
+                    <img src="assets/Me2.jpeg" align="center">
                 </td>
                 <td>
                     <h1 align="center">About Me</h1>
                     <p align="center">
                         My name is Jaden Noronha and I am a second year Mathematics student at the University
-                        of Waterloo. I am passionate about applying my skills in math and computer science to real-world
-                        situations. My other areas of interest include sustainability, ethics and project management.
+                        of Waterloo. I discovered my love for mathematics in high school, and ever since I have been seeking
+                        opportunities to develop my skills. I am passionate about applying my talents in impactful ways. Other than 
+                        math and computer science, I have also been developing my knowledge in project management (Six Sigma), sustainability
+                        and ethics. My hobbies and interests include Martial Arts, Basketball and listening to music. 
                     </p>
                 </td>
             </tr>
@@ -50,58 +70,68 @@
             <table width="100%" style="font-size: 20px; text-align: center">
                 <tr>
                     <td>
-                        <img src="python.png" width="50"><br>
+                        <img src="assets/python.png" width="50"><br>
                         Python
                     </td>
                     <td>
-                        <img src="letter-c.png" width="50"><br>
+                        <img src="assets/letter-c.png" width="50"><br>
                         C
                     </td>
                     <td>
-                        <img src="browser.png" width="50"><br>
+                        <img src="assets/browser.png" width="50"><br>
                         HTML, CSS, JavaScript
                     </td>
                     <td>
-                        <img src="calculate.png" width="50"><br>
+                        <img src="assets/calculate.png" width="50"><br>
                         LaTeX
                     </td>
                     <td>
-                        <img src="pin.png" width="50"><br>
+                        <img src="assets/pin.png" width="50"><br>
                         ArcGIS Online
                     </td>
                 </tr>
             </table>
         </div>
         
-        <p>            </p> <!-- SPACER -->
+        <br>
 
         <div id="Projects">
             <h1 align="center">Projects</h1>
-            <p>            </p> <!-- SPACER -->
+            <br>
             <table width="90%" align="center" cellspacing="10" cellpadding="10" style="text-align: center">
                 <tr>
-                    <td>
-                        <img src="PyPass.png" align="center" style="max-width: 90%"><br>
+                    <td onclick="donav('https://github.com/jpnoro2003/PyPass');">
+                        <img src="assets/PyPass.png" align="center" style="max-width: 90%"><br>
                         <h2>PyPass Password Generator</h2>
                     </td>
-                    <td>
-                        <img src="Zipf.png" align="center" style="max-width: 90%"><br>
+                    <td onclick="donav('https://github.com/jpnoro2003/ZipfsLawPython');">
+                        <img src="assets/Zipf.png" align="center" style="max-width: 90%"><br>
                         <h2>Analyzing Zipf's Law</h2>
                     </td>
-                    <td>
-                        <img src="OnDemandGIS.png" align="center" style="max-width: 90%"><br>
+                    <td onclick="donav('https://resources.esri.ca/geographical-thinking-podcast/season-1-episode-13-students-gis-work-wowed-judges');">
+                        <img src="assets/OnDemandGIS.png" align="center" style="max-width: 90%"><br>
                         <h2>Transit Analysis using ArcGIS</h2>
                     </td>
                 </tr>
             </table>
         </div>
+
         <div id="footer">
-            <h1>Image Sources</h1>
-            <a href="https://www.flaticon.com/free-icons/python" title="python icons">Python icons created by Freepik - Flaticon</a><br>
-            <a href="https://www.flaticon.com/free-icons/letter-c" title="letter c icons">Letter c icons created by Hight Quality Icons - Flaticon</a><br>
-            <a href="https://www.flaticon.com/free-icons/www" title="www icons">Www icons created by Freepik - Flaticon</a><br>
-            <a href="https://www.flaticon.com/free-icons/notepad" title="notepad icons">Notepad icons created by Freepik - Flaticon</a><br>
-            <a href="https://www.flaticon.com/free-icons/gis" title="gis icons">Gis icons created by Creative Stall Premium - Flaticon</a><br>
+            <table align="center">
+                <tr>
+                    <td>
+                        <h2>Image Sources</h2>
+                    </td>
+                    <td>
+                        <a href="https://www.flickr.com/photos/49194777@N00/1393261693" target="_blank" title="Background image">Background image by Jo Simon</a><br>
+                        <a href="https://www.flaticon.com/free-icons/python" target="_blank" title="python icons">Python icons created by Freepik - Flaticon</a><br>
+                        <a href="https://www.flaticon.com/free-icons/letter-c" target="_blank" title="letter c icons">Letter c icons created by Hight Quality Icons - Flaticon</a><br>
+                        <a href="https://www.flaticon.com/free-icons/www" target="_blank" title="www icons">Www icons created by Freepik - Flaticon</a><br>
+                        <a href="https://www.flaticon.com/free-icons/notepad" target="_blank" title="notepad icons">Notepad icons created by Freepik - Flaticon</a><br>
+                        <a href="https://www.flaticon.com/free-icons/gis" target="_blank" title="gis icons">Gis icons created by Creative Stall Premium - Flaticon</a><br>
+                    </td>
+                </tr>
+            </table>
         </div>
     </body>
 </html>
