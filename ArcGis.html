@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="projectstyle.css">
+        <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/montserrat" >
+        
+        <title>Jaden Noronha</title>
+
+        <script>
+            function donav(target) {
+                document.location.href = target;
+            }
+            function dynamicscroll() {
+                let body = document.querySelector("body");
+                let nav = document.querySelector("nav");
+                let navbar = document.getElementById("navbar");
+                let intro = document.querySelector("h2");
+                this.scrollY > (intro.offsetTop + intro.offsetHeight - 75) ? navbar.style.backgroundColor = "#D5573B" : navbar.style.backgroundColor = "";
+            }
+            window.addEventListener("scroll", dynamicscroll , false);
+        </script>
+
+    </head>
+
+    <body style="background-image: url('assets/Background.jpg'); background-size: cover;">
+
+        <nav>
+            <table id="navbar" align="center">
+                <tr>
+                    <td onclick="donav('index.html');" class="nav"><b>Home</b></td>
+                    <td onclick="donav('index.html#About_Me');" class="nav"><b>About Me</b></td>
+                    <td onclick="donav('index.html#Skills');"class="nav"><b>Skills</b></td>
+                    <td onclick="donav('index.html#Projects');" class="nav"><b>Projects</b></td>
+                    <td onclick="donav('https://www.linkedin.com/in/jaden-noronha/');" class="nav"><b>LinkedIn</b></td>
+                    <td onclick="donav('https://github.com/jpnoro2003');" class="nav"><b>GitHub</b></td>
+                </tr>
+            </table>
+        </nav>
+        
+        <br><br><br><br><br>
+        <h2 align="center" style="font-size:3.5vw">On Demand Transit Analysis using ArcGIS Online</h2>
+        <table id="section" align="center" width="90%">
+            <tr>
+                <td>
+                    <img src="assets/OnDemandGIS.png" align="center">
+                </td>
+                <td>
+                    <p>
+                        In April 2021, I represented the Dufferin Peel Catholic District School Board at the 2021
+                        Virtual Skills Ontario Competition, where I placed second. For the event, I had to create a story map 
+                        proposing an on-demand transit route for the city of Burlington (the prompt can be seen 
+                        <a href="https://edu.maps.arcgis.com/home/item.html?id=02e10a8eb9da4ad9b761ef664f944d53">here</a>). Optimizing tranist routes
+                        is an increasingly important matter, as it addresses the needs of our growing population while reducing emissions.<br><br>
+                        
+                        During this event, I applied my skills in ArcGIS, data analysis and data visualization to propose my solution to a panel of industry
+                        experts. In my final deliverable, I presented my workflow and conclusions alsongside maps highlighting features such as 
+                    </p>
+                    <ul>
+                        <li>The proposed route with pick-up hubs</li>
+                        <li>Areas where the senior population is over 25%</li>
+                        <li>Areas where there is low ridership and a senior population over 25%</li>
+                        <li>Population Density</li>
+                        <li>Bus stops with low ridership and major roads.</li>
+                    </ul>
+                    <p>
+                        Halfway through the competition, we were given time to show our work to the judges and recieve feedback. I was 
+                        able to implement their suggestions into my final deliverable, improving the quality of my proposal.<br><br>
+                        
+                        After the competition, my supervising teacher and I were 
+                        <a href="https://resources.esri.ca/geographical-thinking-podcast/season-1-episode-13-students-gis-work-wowed-judges">interviewed by Guan Yue on the Esri Canada podcast "Geographical Thinking"</a>,
+                        where I discussed my experience.
+
+                    </p>
+                    <p><b>Unfortunately, due to an account error I no longer have access to the story map :(</b></p>
+                </td>
+            </tr>
+        </table>
+        
+    </body>
+</html>

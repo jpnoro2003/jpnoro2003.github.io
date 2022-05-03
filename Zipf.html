@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="projectstyle.css">
+        <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/montserrat" >
+        
+        <title>Jaden Noronha</title>
+
+        <script>
+            function donav(target) {
+                document.location.href = target;
+            }
+            function dynamicscroll() {
+                let body = document.querySelector("body");
+                let nav = document.querySelector("nav");
+                let navbar = document.getElementById("navbar");
+                let intro = document.querySelector("h2");
+                this.scrollY > (intro.offsetTop + intro.offsetHeight - 75) ? navbar.style.backgroundColor = "#D5573B" : navbar.style.backgroundColor = "";
+            }
+            window.addEventListener("scroll", dynamicscroll , false);
+        </script>
+
+    </head>
+
+    <body style="background-image: url('assets/Background.jpg'); background-size: cover;">
+
+        <nav>
+            <table id="navbar" align="center">
+                <tr>
+                    <td onclick="donav('index.html');" class="nav"><b>Home</b></td>
+                    <td onclick="donav('index.html#About_Me');" class="nav"><b>About Me</b></td>
+                    <td onclick="donav('index.html#Skills');"class="nav"><b>Skills</b></td>
+                    <td onclick="donav('index.html#Projects');" class="nav"><b>Projects</b></td>
+                    <td onclick="donav('https://www.linkedin.com/in/jaden-noronha/');" class="nav"><b>LinkedIn</b></td>
+                    <td onclick="donav('https://github.com/jpnoro2003');" class="nav"><b>GitHub</b></td>
+                </tr>
+            </table>
+        </nav>
+        
+        <br><br><br><br><br>
+        <h2 align="center" style="font-size:3.5vw">Zipfs Law in Classic Literature</h2>
+        <table id="section" align="center" width="90%">
+            <tr>
+                <td>
+                    <img src="assets/ZipfReport.png" align="center" style="max-width: 40vw">
+                    <p align="center">A screenshot of the report.</p>
+                    <img src="assets/Figure_1.png" align="center" style="max-width: 40vw">
+                    <p align="center">A graph from the report.</p>
+                </td>
+                <td>
+                    <p>
+                        <a href="https://www.youtube.com/watch?v=fCn8zs912OE&ab_channel=Vsauce">Inspired by a video posted by the Youtube channel "Vsauce"</a>, I decided
+                        to analyze the occurence of Zipf's law in the ten most popular english books available on
+                        Project Gutenberg. The law proposes that the frequency of a given word is proportional to the
+                        inverse of its ranking in a body of text. This law is used to roughly describe
+                        the distribution of words in human languages, and has been aplied in psychology, sociology
+                        and economics. <br><br>
+
+                        To visualize Zipf's law, I first downloaded the 10 most popular english titles on the Project
+                        Gutenberg website as text files and removed irrelevant information (discclaimer, page numbers, etc.). I then
+                        wrote a program in python that opens all of the text files in its directory, stores the frequency of the words in
+                        a dictionary, and then produces the total word count, the total unique words,the word counts of the 10 most
+                        common words, and a graph showcasing the relationship between the ranking of a word and its frequency (created using the
+                        matplotlib library). The corpus of texts I used had over 1.2 million words and over 37 thousand unique words. <br><br>
+
+                        In addition, <a href="https://github.com/jpnoro2003/ZipfsLawPython/blob/main/Zipf_s_Law_in_Classic_Literature.pdf">I wrote a report using LaTeX that explained Zipf's Law, my proccess, and the final results of my analysis.</a>
+                    </p>
+                    <p><b><a href="https://github.com/jpnoro2003/ZipfsLawPython">You can view the GitHub repository here.</a></b></p>
+                </td>
+            </tr>
+        </table>
+        
+    </body>
+</html>
