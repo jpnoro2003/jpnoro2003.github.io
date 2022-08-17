@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="projectstyle.css">
+        <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/montserrat" >
+        
+        <title>Jaden Noronha</title>
+
+        <script>
+            function donav(target) {
+                document.location.href = target;
+            }
+            function dynamicscroll() {
+                let body = document.querySelector("body");
+                let nav = document.querySelector("nav");
+                let navbar = document.getElementById("navbar");
+                let intro = document.querySelector("h2");
+                this.scrollY > (intro.offsetTop + intro.offsetHeight - 75) ? navbar.style.backgroundColor = "#D5573B" : navbar.style.backgroundColor = "";
+            }
+            window.addEventListener("scroll", dynamicscroll , false);
+        </script>
+
+    </head>
+
+    <body style="background-image: url('assets/Background.jpg'); background-size: cover;">
+
+        <nav>
+            <table id="navbar" align="center">
+                <tr>
+                    <td onclick="donav('index.html');" class="nav"><b>Home</b></td>
+                    <td onclick="donav('index.html#About_Me');" class="nav"><b>About Me</b></td>
+                    <td onclick="donav('index.html#Skills');"class="nav"><b>Skills</b></td>
+                    <td onclick="donav('index.html#Projects');" class="nav"><b>Projects</b></td>
+                    <td onclick="donav('https://www.linkedin.com/in/jaden-noronha/');" class="nav"><b>LinkedIn</b></td>
+                    <td onclick="donav('https://github.com/jpnoro2003');" class="nav"><b>GitHub</b></td>
+                </tr>
+            </table>
+        </nav>
+        
+        <br><br><br><br><br>
+        <h2 align="center" style="font-size:3vw">Analyzing the Average NBA player from 1979-80 to 2021-22</h2>
+        <table id="section" align="center" width="90%">
+            <tr>
+                <td>
+                    <img src="assets/NBADashboard.png" align="center" style="max-width: 40vw">
+                    <p align="center">A screenshot of the Tableau Dashboard, which allows users to view the average statistics by season and position, as well as the most average player per position for each year.</p>
+                </td>
+                <td>
+                    <p>
+                        As an NBA fan, I often see discourse on the levels of competition for different seasons. While there
+                        are various methods to approach this problem, I decided to analyze the averages for 20 different statistics by position starting from the 1979-80 season (when the 3 point shot was introduced).
+                        To eliminate outliers due to limited minutes played, I only considered the statistics for players that played in 70% of the regular season games for a season, or the equivalent of 1000 minutes in an 82 game season.
+                        A player's "averageness" was determined by a similarity score, which was the sum of the percentage difference for each statistic.
+                    </p>
+                    <p>
+                        I sourced my data from <a href="basketball-reference.com">basketball-reference.com</a>, which came in the form of .csv files. I aggregated these files into a database using SQLite so that I can efficiently analyze them using SQL.
+                        Since there were null values in the data that would impact my analysis, I used SQL to clean the data. I then planned my analysis by analyzing the data for one season using Excel. I used this as a reference
+                        to ensure that my sql queries were accurate. The analysis was done using views that incorporated SQL joins and subqueries that incorporated multiple tables. The database ultimately contained 88 tables, 172 views and over 25000 entries.
+                    </p>
+                    <p>
+                        After conducting exploratory data analysis, <a href="https://public.tableau.com/app/profile/jaden.noronha/viz/HistoricalAverageNBAPlayer/Dashboard1?publish=yes">I developed a dashboard using Tableau</a> to gain further insights. The dashboard showcases a line graph that visualizes the progression in different statistics by position (including the overall average),
+                        a table containing the averages for a season by position (including the average overall player), and a table displaying the most average eligible player by position, determined by the lowest similarity score. The dashboard allows users to sort by position,
+                        statistic (line graph) and year (tables). Alongside the dashboard, <a href="https://medium.com/@jpnoro2003/analyzing-the-average-nba-player-from-1979-80-to-2021-22-8c7556b07b49">I wrote an article on Medium explaining my analysis</a> and how specific trends could be explained by historical NBA events/rule changes.
+                    </p>
+                    <p><b><a href="https://github.com/jpnoro2003/NbaAveragePlayer">You can view the GitHub repository here.</a></b></p>
+                    <p><b><a href="https://public.tableau.com/app/profile/jaden.noronha/viz/HistoricalAverageNBAPlayer/Dashboard1?publish=yes">You can view the Tableau dashboard here.</a></b></p>
+                    <p><b><a href="https://medium.com/@jpnoro2003/analyzing-the-average-nba-player-from-1979-80-to-2021-22-8c7556b07b49">You can view the Medium article here.</a></b></p>
+                </td>
+            </tr>
+        </table>
+        
+    </body>
+</html>
