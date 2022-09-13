@@ -99,13 +99,18 @@ h1 {
     width: 100%
 }
 
-#footer a {
-    color:white;
-    font-size: 10px;
-}
 #footer tr td {
     padding: 10px;
     text-align: center;
 
 }
 
+#footer a {
+    color:white;
+    transition: background-color 0.3s ease-out;
+}
+
+#footer a:hover {
+    background-color: white;
+    color:#242333;
+}
