@@ -1,3 +1,7 @@
+html { 
+    font-size:100%; 
+} 
+
 body {
     background-color: #242333;
     color: white;
@@ -7,7 +11,7 @@ body {
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 7.5vw;
     margin: 0px;
     padding: 0px
 }
@@ -43,7 +47,6 @@ h1 {
 
 .nav {
     width: 16.66666667%;
-    font-size: 10px;
     font-size: 1.75vw;
     transition: background-color 0.3s ease-out;
 }
@@ -61,6 +64,7 @@ h1 {
 
 #About_Me p {
     max-width: 40vw;
+    font-size: 1.25vw;
     height: auto;
     padding-left: 25px;
     padding-right: 25px

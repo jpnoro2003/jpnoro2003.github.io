@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/montserrat" >
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <title>Jaden Noronha</title>
+
+        <script>
+            function donav(target) {
+                document.location.href = target;
+            }
+
+            function dynamicscroll() {
+                let body = document.querySelector("body");
+                let nav = document.querySelector("nav");
+                let navbar = document.getElementById("navbar");
+                let intro = document.getElementById("Home");
+                this.scrollY > (intro.offsetTop + intro.offsetHeight - 50) ? navbar.style.backgroundColor = "#334470" : navbar.style.backgroundColor = "";
+            }
+            window.addEventListener("scroll", dynamicscroll , false);
+        </script>
+
+    </head>
+
+    <body>
+
+        <nav>
+            <table id="navbar" align="center">
+                <tr>
+                    <td onclick="donav('index.html');" class="nav"><b>Home</b></td>
+                    <td onclick="donav('https://www.linkedin.com/in/jaden-noronha/');" class="nav"><b>LinkedIn</b></td>
+                    <td onclick="donav('https://github.com/jpnoro2003');" class="nav"><b>GitHub</b></td>
+                </tr>
+            </table>
+        </nav>
+        
+        <div id="Home">
+            <br><br><br><br><br>
+            <b><p style="font-size: 7vw" align="center">Jaden Noronha</p></b>
+            <p style="font-size: 4vw" align="center">Mathematics Student</p>
+            <br><br><br><br><br><br>
+        </div>
+        
+
+        <table id="About_Me" align="center" width="90%">
+            <tr>
+                <td>
+                    <img src="assets/Me2.jpeg" align="center">
+                </td>
+                <td>
+                    <h1 align="center">About Me</h1>
+                    <p align="center">
+                        My name is Jaden Noronha and I am a second-year Mathematics student at the University
+                        of Waterloo. I discovered my love for mathematics in high school, and ever since I have been seeking
+                        opportunities to develop my skills. I am passionate about applying my talents in impactful ways. Other than 
+                        math and computer science, I have also been developing my knowledge in project management (Six Sigma), sustainability,
+                        and ethics. My hobbies and interests include Martial Arts, Basketball, and listening to music. 
+                    </p>
+                </td>
+            </tr>
+        </table>
+
+        <div id="Skills">
+            <h1 align="center">Skills</h1>
+            <table width="100%" style="text-align: center">
+                <tr>
+                    <td>
+                        <img src="assets/sql-server.png" width="10%"><br>
+                        SQL (SQLite, PostgreSQL)
+                    </td>
+                    <td>
+                        <img src="assets/python.png" width="10%"><br>
+                        Python (NumPy, Pandas Matplotlib)
+                    </td>
+                    <td>
+                        <img src="assets/browser.png" width="10%"><br>
+                        HTML, CSS, JavaScript
+                    </td>
+                    <td>
+                        <img src="assets/office.png" width="10%"><br>
+                        Microsoft Office
+                    </td>
+                    <td>
+                        <img src="assets/dashboard.png" width="10%"><br>
+                        Tableau
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+        <br>
+
+        <div id="Projects">
+            <h1 align="center">Projects</h1>
+            <br>
+            <table width="90%" align="center" cellspacing="10" cellpadding="10" style="text-align: center">
+                <tr>
+                    <td onclick="donav('NBA.html');">
+                        <img src="assets/NBADashboard.png" align="center" style="max-width: 90%"><br>
+                        <h2>Historic NBA Player Analysis</h2>
+                    </td>
+                    <td onclick="donav('PyPass.html');">
+                        <img src="assets/PyPass.png" align="center" style="max-width: 90%"><br>
+                        <h2>PyPass Password Manager</h2>
+                    </td>
+                    <td onclick="donav('Zipf.html');">
+                        <img src="assets/ZipfReport.png" align="center" style="max-width: 90%"><br>
+                        <h2>Analyzing Zipf's Law</h2>
+                    </td>
+                </tr>
+                <tr>
+                    <td onclick="donav('ArcGis.html');">
+                        <img src="assets/OnDemandGIS.png" align="center" style="max-width: 90%"><br>
+                        <h2>Transit Analysis using ArcGIS</h2>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </body>
+</html>

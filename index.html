@@ -1,146 +1,187 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
     <head>
-        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/montserrat" >
-        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />  
         <title>Jaden Noronha</title>
-
-        <script>
-            function donav(target) {
-                document.location.href = target;
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <style>
+            #Home {
+                height: 100%;
+                background-size: cover;
+                background-attachment: fixed;
+                background-image: url('assets/Background.jpg');
             }
-
+            #navbar {
+                transition: background 0.3s ease-out;
+            }
+        </style>
+        <script>
             function dynamicscroll() {
                 let body = document.querySelector("body");
                 let nav = document.querySelector("nav");
                 let navbar = document.getElementById("navbar");
                 let intro = document.getElementById("Home");
-                this.scrollY > (intro.offsetTop + intro.offsetHeight - 50) ? navbar.style.backgroundColor = "#334470" : navbar.style.backgroundColor = "";
+                this.scrollY > (intro.offsetTop + intro.offsetHeight-50) ? navbar.style.backgroundColor = "#343342" : navbar.style.backgroundColor = "";
             }
             window.addEventListener("scroll", dynamicscroll , false);
         </script>
-
     </head>
 
-    <body>
-
-        <nav>
-            <table id="navbar" align="center">
-                <tr>
-                    <td onclick="donav('index.html');" class="nav"><b>Home</b></td>
-                    <td onclick="donav('index.html#About_Me');" class="nav"><b>About Me</b></td>
-                    <td onclick="donav('index.html#Skills');"class="nav"><b>Skills</b></td>
-                    <td onclick="donav('index.html#Projects');" class="nav"><b>Projects</b></td>
-                    <td onclick="donav('https://www.linkedin.com/in/jaden-noronha/');" class="nav"><b>LinkedIn</b></td>
-                    <td onclick="donav('https://github.com/jpnoro2003');" class="nav"><b>GitHub</b></td>
-                </tr>
-            </table>
-        </nav>
-        
-        <div id="Home">
-            <br><br><br><br><br>
-            <b><p style="font-size: 7vw" align="center">Jaden Noronha</p></b>
-            <p style="font-size: 4vw" align="center">Mathematics Student</p>
-            <br><br><br><br><br><br>
+  <body>
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="navbar">
+        <button class="navbar-toggler mx-3" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mx-3" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="index.html">Home</a>
+              <a class="nav-item nav-link" href="https://www.linkedin.com/in/jaden-noronha/">LinkedIn</a>
+              <a class="nav-item nav-link" href="https://github.com/jpnoro2003">GitHub</a>
+            </div>
         </div>
-        
+      </nav>
 
-        <table id="About_Me" align="center" width="90%">
-            <tr>
-                <td>
-                    <img src="assets/Me2.jpeg" align="center">
-                </td>
-                <td>
-                    <h1 align="center">About Me</h1>
-                    <p align="center">
-                        My name is Jaden Noronha and I am a second-year Mathematics student at the University
-                        of Waterloo. I discovered my love for mathematics in high school, and ever since I have been seeking
-                        opportunities to develop my skills. I am passionate about applying my talents in impactful ways. Other than 
-                        math and computer science, I have also been developing my knowledge in project management (Six Sigma), sustainability,
-                        and ethics. My hobbies and interests include Martial Arts, Basketball, and listening to music. 
-                    </p>
-                </td>
-            </tr>
-        </table>
+    <div id="Home">
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <h1 class="display-1 text-center text-white"><b>Jaden Noronha</b></h1>
+        <p class="display-5 text-center text-white">Mathematical Optimization Student</p>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div> 
 
-        <div id="Skills">
-            <h1 align="center">Skills</h1>
-            <table width="100%" style="font-size: 20px; text-align: center">
-                <tr>
-                    <td>
-                        <img src="assets/sql-server.png" width="50"><br>
-                        SQL (SQLite, PostgreSQL)
-                    </td>
-                    <td>
-                        <img src="assets/python.png" width="50"><br>
-                        Python (NumPy, Pandas Matplotlib)
-                    </td>
-                    <td>
-                        <img src="assets/browser.png" width="50"><br>
-                        HTML, CSS, JavaScript
-                    </td>
-                    <td>
-                        <img src="assets/office.png" width="50"><br>
-                        Microsoft Office
-                    </td>
-                    <td>
-                        <img src="assets/dashboard.png" width="50"><br>
-                        Tableau
-                    </td>
-                </tr>
-            </table>
+    <div class="container-md align-items-center my-5">
+        <div class="row">
+            <div class="col-md-7 align-items-center">
+                <img src="assets/Me2.jpeg" align="center" width="100%">
+            </div>
+            <div class="col-md-5 align-items-center">
+                <br>
+                <h1 class="display-3 text-center my-1">About Me</h1>
+                <p class="text-center my-1">
+                    My name is Jaden Noronha and I am a second-year Mathematics student at the University
+                    of Waterloo. I discovered my love for mathematics in high school, and ever since I have been seeking
+                    opportunities to develop my skills. I am passionate about applying my talents in impactful ways. Other than 
+                    math and computer science, I have also been developing my knowledge in project management (Six Sigma), sustainability,
+                    and ethics. My hobbies and interests include Martial Arts, Basketball, and listening to music. 
+                </p>
+            </div>
         </div>
-        
-        <br>
+    </div>
 
-        <div id="Projects">
-            <h1 align="center">Projects</h1>
-            <br>
-            <table width="90%" align="center" cellspacing="10" cellpadding="10" style="text-align: center">
-                <tr>
-                    <td onclick="donav('NBA.html');">
-                        <img src="assets/NBADashboard.png" align="center" style="max-width: 90%"><br>
-                        <h2>Historic NBA Player Analysis</h2>
-                    </td>
-                    <td onclick="donav('PyPass.html');">
-                        <img src="assets/PyPass.png" align="center" style="max-width: 90%"><br>
-                        <h2>PyPass Password Manager</h2>
-                    </td>
-                    <td onclick="donav('Zipf.html');">
-                        <img src="assets/ZipfReport.png" align="center" style="max-width: 90%"><br>
-                        <h2>Analyzing Zipf's Law</h2>
-                    </td>
-                </tr>
-                <tr>
-                    <td onclick="donav('ArcGis.html');">
-                        <img src="assets/OnDemandGIS.png" align="center" style="max-width: 90%"><br>
-                        <h2>Transit Analysis using ArcGIS</h2>
-                    </td>
-                </tr>
-            </table>
-        </div>
+    
+    <h1 class="display-3 my-5" align="center">Skills</h1> 
+    <div class="row row-cols-1 row-cols-md-3 g-4 mx-5 mb-5">
+        <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title text-center">Languages</h5>
+                <b>Proficient</b>
+                <ul>
+                    <li>Python (Pandas, Numpy, Matplotlib, Seaborn, Scikit-Learn, Beautiful Soup, Selenium, Tkinter)</li>
+                    <li>SQL (SQLite)</li>
+                </ul>
+                <b>Familiar</b>
+                <ul>
+                    <li>HTML/CSS (Bootstrap)</li>
+                    <li>Javascript (Google Apps Script)</li>
+                    <li>R</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title text-center">Technologies</h5>
+                <ul>
+                    <li>Looker</li>
+                    <li>Tableau</li>
+                    <li>Jupyter Notebooks</li>
+                    <li>Microsoft Office</li>
+                    <li>Google Workspaces</li>
+                    <li>Confluence</li>
+                    <li>Pipedrive</li>
+                    <li>ArcGIS Online</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title text-center">Knowledge Areas</h5>
+                <ul>
+                    <li>Data Analysis</li>
+                    <li>Lean Six Sigma (Yellow Belt)</li>
+                    <li>Probability</li>
+                    <li>Optimization</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
 
-        <div id="footer">
-            <table align="center">
-                <tr>
-                    <td>
-                        <h2>Image Sources</h2>
-                    </td>
-                    <td>
-                        <a href="https://www.flickr.com/photos/49194777@N00/1393261693" target="_blank" title="Background image">Background image by Jo Simon</a><br>
-                        <a href="https://www.flaticon.com/free-icons/python" target="_blank" title="python icons">Python icons created by Freepik - Flaticon</a><br>
-                        <a href="https://www.flaticon.com/free-icons/letter-c" target="_blank" title="letter c icons">Letter c icons created by Hight Quality Icons - Flaticon</a><br>
-                        <a href="https://www.flaticon.com/free-icons/www" target="_blank" title="www icons">Www icons created by Freepik - Flaticon</a><br>
-                        <a href="https://www.flaticon.com/free-icons/notepad" target="_blank" title="notepad icons">Notepad icons created by Freepik - Flaticon</a><br>
-                        <a href="https://www.flaticon.com/free-icons/gis" target="_blank" title="gis icons">Gis icons created by Creative Stall Premium - Flaticon</a><br>
-                        <a href="https://www.flaticon.com/free-icons/sql" target="_blank" title="sql icons">Sql icons created by juicy_fish - Flaticon</a><br>
-                        <a href="https://www.flaticon.com/free-icons/microsoft" target="_blank" title="microsoft icons">Microsoft icons created by Pixel perfect - Flaticon</a><br>
-                        <a href="https://www.flaticon.com/free-icons/dashboard" target="_blank" title="dashboard icons">Dashboard icons created by Pixel perfect - Flaticon</a>
-                    </td>
-                </tr>
-            </table>
+    <h1 class="display-3 text-center my-5">Projects</h1>
+    <div class="row row-cols-1 row-cols-md-3 g-4 mx-5 mb-5">
+        <div class="col">
+          <div class="card h-100">
+            <img src="assets/NBADashboard-card.png" class="card-img-top"
+              alt="Historic NBA Player Analysis" />
+            <div class="card-body">
+              <h5 class="card-title">Historic NBA Player Analysis</h5>
+              <p class="card-text">
+                Analyzing NBA player statistics over 43 years using SQL and Tableau.
+              </p>
+              <a href='NBA.html' class="btn btn-primary">See Overview</a>
+            </div>
+          </div>
         </div>
-    </body>
+        <div class="col">
+            <div class="card h-100">
+              <img src="assets/PyPass-card.png" class="card-img-top"
+                alt="PyPass Password Manager" />
+              <div class="card-body">
+                <h5 class="card-title">PyPass Password Manager</h5>
+                <p class="card-text">
+                  Local Password Manager built using Python, with an interface made with Tkinter.
+                </p>
+                <a href='PyPass.html' class="btn btn-primary">See Overview</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="assets/Zipf-Card.png" class="card-img-top"
+                alt="Analyzing Zipf's Law" />
+              <div class="card-body">
+                <h5 class="card-title">Analyzing Zipf's Law</h5>
+                <p class="card-text">
+                  Analyzing the occurrence of Zipf's law in classic English literature using Python and the Matplotlib library.
+                </p>
+                <a href='Zipf.html' class="btn btn-primary">See Overview</a>
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card h-100">
+              <img src="assets/OnDemandGIS-card.png" class="card-img-top"
+                alt="Transit Analysis using ArcGIS" />
+              <div class="card-body">
+                <h5 class="card-title">Transit Analysis using ArcGIS</h5>
+                <p class="card-text">
+                  Modelling an Optimized transit route for the City of Burlington using an ArcGIS Online story map.
+                </p>
+                <a href='ArcGis.html' class="btn btn-primary">See Overview</a>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    
+  </body>
 </html>
