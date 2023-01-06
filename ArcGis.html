@@ -1,81 +1,87 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="projectstyle.css">
-        <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/montserrat" >
-        
-        <title>Jaden Noronha</title>
+<!doctype html>
+<html lang="en">
 
-        <script>
-            function donav(target) {
-                document.location.href = target;
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />  
+        <title>On Demand Transit Analysis using ArcGIS Online - Jaden Noronha</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <style>
+            #Home {
+                height: 100%;
+                background-size: cover;
+                background-attachment: fixed;
+                background-image: url('assets/Background.jpg');
             }
+            #navbar {
+                transition: background 0.3s ease-out;
+            }
+        </style>
+        <script>
             function dynamicscroll() {
                 let body = document.querySelector("body");
                 let nav = document.querySelector("nav");
                 let navbar = document.getElementById("navbar");
-                let intro = document.querySelector("h2");
-                this.scrollY > (intro.offsetTop + intro.offsetHeight - 75) ? navbar.style.backgroundColor = "#334470" : navbar.style.backgroundColor = "";
+                let intro = document.getElementById("Home");
+                this.scrollY > (50) ? navbar.style.backgroundColor = "#343342" : navbar.style.backgroundColor = "";
             }
             window.addEventListener("scroll", dynamicscroll , false);
         </script>
-
     </head>
 
-    <body style="background-image: url('assets/Background.jpg'); background-size: cover;">
-
-        <nav>
-            <table id="navbar" align="center">
-                <tr>
-                    <td onclick="donav('index.html');" class="nav"><b>Home</b></td>
-                    <td onclick="donav('index.html#About_Me');" class="nav"><b>About Me</b></td>
-                    <td onclick="donav('index.html#Skills');"class="nav"><b>Skills</b></td>
-                    <td onclick="donav('index.html#Projects');" class="nav"><b>Projects</b></td>
-                    <td onclick="donav('https://www.linkedin.com/in/jaden-noronha/');" class="nav"><b>LinkedIn</b></td>
-                    <td onclick="donav('https://github.com/jpnoro2003');" class="nav"><b>GitHub</b></td>
-                </tr>
-            </table>
-        </nav>
-        
-        <br><br><br><br><br>
-        <h2 align="center" style="font-size:3.5vw">On Demand Transit Analysis using ArcGIS Online</h2>
-        <table id="section" align="center" width="90%">
-            <tr>
-                <td>
-                    <img src="assets/OnDemandGIS.png" align="center">
-                </td>
-                <td>
-                    <p>
-                        In April 2021, I represented the Dufferin Peel Catholic District School Board at the 2021
-                        Virtual Skills Ontario Competition, where I placed second. For the event, I had to create a story map 
-                        proposing an on-demand transit route for the city of Burlington (the prompt can be seen 
-                        <a href="https://edu.maps.arcgis.com/home/item.html?id=02e10a8eb9da4ad9b761ef664f944d53">here</a>). Optimizing tranist routes
-                        is an increasingly important matter, as it addresses the needs of our growing population while reducing emissions.<br><br>
-                        
-                        During this event, I applied my skills in ArcGIS, data analysis and data visualization to propose my solution to a panel of industry
-                        experts. In my final deliverable, I presented my workflow and conclusions alongside maps highlighting features such as 
-                    </p>
-                    <ul>
-                        <li>The proposed route with pick-up hubs</li>
-                        <li>Areas where the senior population is over 25%</li>
-                        <li>Areas where there is low ridership and a senior population over 25%</li>
-                        <li>Population Density</li>
-                        <li>Bus stops with low ridership and major roads.</li>
-                    </ul>
-                    <p>
-                        Halfway through the competition, we were given time to show our work to the judges and receive feedback. I was 
-                        able to implement their suggestions into my final deliverable, improving the quality of my proposal.<br><br>
-                        
-                        After the competition, my supervising teacher and I were 
-                        <a href="https://resources.esri.ca/geographical-thinking-podcast/season-1-episode-13-students-gis-work-wowed-judges">interviewed by Guan Yue on the Esri Canada podcast "Geographical Thinking"</a>,
-                        where I discussed my experience.
-
-                    </p>
-                    <p><b>Unfortunately, due to an account error I no longer have access to the story map :(</b></p>
-                </td>
-            </tr>
-        </table>
-        
-    </body>
+  <body id="Home">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="navbar">
+        <button class="navbar-toggler mx-3" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mx-3" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="index.html">Home</a>
+              <a class="nav-item nav-link" href="https://www.linkedin.com/in/jaden-noronha/">LinkedIn</a>
+              <a class="nav-item nav-link" href="https://github.com/jpnoro2003">GitHub</a>
+            </div>
+        </div>
+      </nav>
+    
+    
+    <h1 class="display-1 text-center text-white my-5"><b>On Demand Transit Analysis using ArcGIS Online</b></h1>
+    <div class="container-md align-items-center bg-white my-5">
+        <div class="row">
+            <div class="col-md-5 align-items-center my-5">
+                <img src="assets/OnDemandGIS.png" align="center" width="100%">
+                <p class="text-center my-1"><b>Unfortunately, due to an account error I no longer have access to the story map :(</b></p>
+            </div>
+            <div class="col-md-7 align-items-center my-5">
+                <p class="text-center my-1">
+                    In April 2021, I represented the Dufferin Peel Catholic District School Board at the 2021
+                    Virtual Skills Ontario Competition, where I placed second. For the event, I had to create a story map 
+                    proposing an on-demand transit route for the city of Burlington (the prompt can be seen 
+                    <a href="https://edu.maps.arcgis.com/home/item.html?id=02e10a8eb9da4ad9b761ef664f944d53">here</a>). Optimizing tranist routes
+                    is an increasingly important matter, as it addresses the needs of our growing population while reducing emissions.<br><br>
+                    
+                    During this event, I applied my skills in ArcGIS, data analysis and data visualization to propose my solution to a panel of industry
+                    experts. In my final deliverable, I presented my workflow and conclusions alongside maps highlighting features such as 
+                </p>
+                <ul class="text-center my-1">
+                    <li>The proposed route with pick-up hubs</li>
+                    <li>Areas where the senior population is over 25%</li>
+                    <li>Areas where there is low ridership and a senior population over 25%</li>
+                    <li>Population Density</li>
+                    <li>Bus stops with low ridership and major roads.</li>
+                </ul>
+                <p class="text-center my-1">
+                    Halfway through the competition, we were given time to show our work to the judges and receive feedback. I was 
+                    able to implement their suggestions into my final deliverable, improving the quality of my proposal.<br><br>
+                    
+                    After the competition, my supervising teacher and I were 
+                    <a href="https://resources.esri.ca/geographical-thinking-podcast/season-1-episode-13-students-gis-work-wowed-judges">interviewed by Guan Yue on the Esri Canada podcast "Geographical Thinking"</a>,
+                    where I discussed my experience.
+                </p>
+            </div>
+        </div>
+    </div>
+  </body>
 </html>

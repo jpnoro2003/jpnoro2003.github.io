@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="projectstyle.css">
+        <link rel="stylesheet" href="http://fonts.cdnfonts.com/css/montserrat" >
+        
+        <title>Jaden Noronha</title>
+
+        <script>
+            function donav(target) {
+                document.location.href = target;
+            }
+            function dynamicscroll() {
+                let body = document.querySelector("body");
+                let nav = document.querySelector("nav");
+                let navbar = document.getElementById("navbar");
+                let intro = document.querySelector("h2");
+                this.scrollY > (intro.offsetTop + intro.offsetHeight - 75) ? navbar.style.backgroundColor = "#334470" : navbar.style.backgroundColor = "";
+            }
+            window.addEventListener("scroll", dynamicscroll , false);
+        </script>
+
+    </head>
+
+    <body style="background-image: url('assets/Background.jpg'); background-size: cover;">
+
+        <nav>
+            <table id="navbar" align="center">
+                <tr>
+                    <td onclick="donav('index.html');" class="nav"><b>Home</b></td>
+                    <td onclick="donav('index.html#About_Me');" class="nav"><b>About Me</b></td>
+                    <td onclick="donav('index.html#Skills');"class="nav"><b>Skills</b></td>
+                    <td onclick="donav('index.html#Projects');" class="nav"><b>Projects</b></td>
+                    <td onclick="donav('https://www.linkedin.com/in/jaden-noronha/');" class="nav"><b>LinkedIn</b></td>
+                    <td onclick="donav('https://github.com/jpnoro2003');" class="nav"><b>GitHub</b></td>
+                </tr>
+            </table>
+        </nav>
+        
+        <br><br><br><br><br>
+        <h2 align="center" style="font-size:3.5vw">PyPass Password Manager</h2>
+        <table id="section" align="center" width="90%">
+            <tr>
+                <td>
+                    <img src="assets/PyPass.png" align="center">
+                </td>
+                <td>
+                    <p>
+                        In an increasingly digital world, it is important to protect one's personal data. One of the most vulnerable areas
+                        online is passwords, with one recent hack exposing the passwords for over 
+                        <a href="https://www.consumeraffairs.com/news/new-84-billion-password-hack-breaks-records-060821.html">
+                        8.3 billion users.</a> This is why password managers, which allow for users to create and securely store their passwords, 
+                        are so important. I developed a basic password manager named PyPass using Python, implementing a GUI using the Tkinter library.
+                        The program offers several features, such as:
+                        <ul>
+                            <li>Master password protection</li>
+                            <li>Password Generation with different parameters (lowercase, symbols, etc.)</li>
+                            <li>Local password storage</li>
+                        </ul>
+                    </p>
+                    <p>
+                        The passwords are stored locally in a text file, that is encrypted using a caesar cipher and decrypted
+                        on runtime. The user can create passwords, save them and remove them within the program, through a simple
+                        interface. The master password adds another layer of security, and can also be modified (the master password is also
+                        saved and secured in a similar manner to the passwords.) To allow for easy implementation of features and bug fixes, I separated the 
+                        program into different files and used a consistent coding style to ensure readability.
+                    </p>
+                    <p><b><a href="https://github.com/jpnoro2003/PyPass">You can view the GitHub repository here.</a></b></p>
+                </td>
+            </tr>
+        </table>
+        
+    </body>
+</html>
