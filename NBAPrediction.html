@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />  
+        <title>NBA Salary Prediction Model - Jaden Noronha</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+        <style>
+            #Home {
+                height: 100%;
+                background-size: cover;
+                background-attachment: fixed;
+                background-image: url('assets/Background.jpg');
+            }
+            #navbar {
+                transition: background 0.3s ease-out;
+            }
+        </style>
+        <script>
+            function dynamicscroll() {
+                let body = document.querySelector("body");
+                let nav = document.querySelector("nav");
+                let navbar = document.getElementById("navbar");
+                let intro = document.getElementById("Home");
+                this.scrollY > (50) ? navbar.style.backgroundColor = "#343342" : navbar.style.backgroundColor = "";
+            }
+            window.addEventListener("scroll", dynamicscroll , false);
+        </script>
+    </head>
+
+  <body id="Home">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" id="navbar">
+        <button class="navbar-toggler mx-3" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse mx-3" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="index.html">Home</a>
+              <a class="nav-item nav-link" href="https://www.linkedin.com/in/jaden-noronha/">LinkedIn</a>
+              <a class="nav-item nav-link" href="https://github.com/jpnoro2003">GitHub</a>
+            </div>
+        </div>
+      </nav>
+    
+    
+    <h1 class="display-1 text-center text-white my-5"><b>NBA Salary Prediction Model</b></h1>
+    <div class="container-md align-items-center bg-white my-5">
+        <div class="row">
+            <div class="col-md-5 align-items-center my-5">
+                <img src="assets/NBAPredictor.png" align="center" width="100%">
+                <p class="text-center my-1">A screenshot of the interface, deployed on Streamlit, that allows users to see the predicted salary in the 2021-22 NBA season based on a player's season. Players can be searched through scraping their statistics using BeautifulSoup.</p>
+                <p class="text-center my-1"><b><a href="https://github.com/jpnoro2003/NBA-Salary-Predictor">You can view the GitHub repository here.</a></b></p>
+                <p class="text-center my-1"><b><a href="https://jpnoro2003-nba-salary-predictor-nbastreamlit-rnzdns.streamlit.app/">You can view the Model here.</a></b></p>
+            </div>
+            <div class="col-md-7 align-items-center my-5">
+                <p class="text-center my-1">
+                    Throughout the history of the NBA, player salaries have increased due to inflation and the increased popularity of the league. Additionally, player's salaries are based on a multitude of factors,
+                    including the year that they signed their contract, their team, and their statistics. As a result, two players who play similarly and have similar statistics might have vastly different contracts.
+                </p>
+                <p class="text-center my-1">
+                    I developed a Random Forest Regression model that predicts a player's salary in the 2021-22 season based on their basic and advanced statistics (sourced from Basketball Reference), yielding a r-squared value of 0.836.
+                    I used Pandas and Seaborn to clean, join and visualize the data, allowing me to determine trends in the data. I then tested 5 different models from Scikit-Learn, fine-tuning their hyperparameters, which increased the r-squared value of my model by 10%.
+                </p>
+                <p class="text-center my-1">
+                    The model was then deployed on Streamlit, allowing users to try the model themselves without having to install python on their machines. The website allows users to search for a player and select a specific year of their career, achieved
+                    by scraping player statistics from Basketball Reference using BeautifulSoup.
+                </p>
+            </div>
+        </div>
+    </div>
+  </body>
+</html>
