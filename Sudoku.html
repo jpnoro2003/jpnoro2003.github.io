@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                // Creating a table dynamically
+                var table = $('<div class="container text-center">');
+
+                for(var g=0; g<3; g++){ // major square row
+                    var sq_row = $('<div class="row row-cols-9 mt-3">');
+
+                    for(var h=0; h<3; h++){ // major square col
+                        var sq_cell = $('<div class="col">');
+
+                        for(var i=0; i<3; i++){ // minor square row
+                            var row = $('<div class="row row-cols-9 mt-1">');
+                            
+                            for(var j=0; j<3; j++){ // minor square col
+                                var cell = $('<div class="col">');
+
+                                if ((i+j) % 2 == 0) {
+                                    var field = $('<input style="background-color: #d3d3d3" class="form-control text-center" maxlength="1" oninput="this.value=this.value.replace(/[^1-9]/g,'+'\'\''+');">');
+                                } else {
+                                    var field = $('<input class="form-control text-center" maxlength="1" oninput="this.value=this.value.replace(/[^1-9]/g,'+'\'\''+');">');
+                                }
+
+                                cell.append(field);
+                                row.append(cell);
+                            }
+                        
+                            sq_cell.append(row);
+                        }
+                        sq_row.append(sq_cell)
+                        sq_row.append($('<div class="vr">'))
+                    }
+                    table.append(sq_row)
+                    table.append($('<hr>'))
+                }
+                // Appending the table to the HTML body
+                $('body').append(table);
+
+            });
+        </script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    </head>
+    <body class="bg-info">
+        <h1 class="display-1 text-center">Sudoku</h1>
+    </body>
+</html>
