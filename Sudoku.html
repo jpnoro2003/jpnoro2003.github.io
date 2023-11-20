@@ -1,49 +1,50 @@
 <html>
     <head>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="sudoku/grid_creation.js"></script>
         <script>
             $(document).ready(function(){
-                // Creating a table dynamically
-                var table = $('<div class="container text-center">');
-
-                for(var g=0; g<3; g++){ // major square row
-                    var sq_row = $('<div class="row row-cols-9 mt-3">');
-
-                    for(var h=0; h<3; h++){ // major square col
-                        var sq_cell = $('<div class="col">');
-
-                        for(var i=0; i<3; i++){ // minor square row
-                            var row = $('<div class="row row-cols-9 mt-1">');
-                            
-                            for(var j=0; j<3; j++){ // minor square col
-                                var cell = $('<div class="col">');
-
-                                if ((i+j) % 2 == 0) {
-                                    var field = $('<input style="background-color: #d3d3d3" class="form-control text-center" maxlength="1" oninput="this.value=this.value.replace(/[^1-9]/g,'+'\'\''+');">');
-                                } else {
-                                    var field = $('<input class="form-control text-center" maxlength="1" oninput="this.value=this.value.replace(/[^1-9]/g,'+'\'\''+');">');
-                                }
-
-                                cell.append(field);
-                                row.append(cell);
-                            }
-                        
-                            sq_cell.append(row);
+                const original_grid = [[0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 7, 0, 0, 0, 0, 0, 9], [0, 6, 0, 0, 0, 2, 0, 0, 0], [0, 0, 0, 2, 8, 0, 0, 0, 0], [0, 8, 0, 0, 0, 0, 0, 0, 6], [0, 0, 0, 1, 0, 9, 8, 0, 0], [9, 0, 0, 0, 0, 5, 0, 7, 0], [0, 0, 0, 3, 9, 8, 6, 5, 0], [5, 0, 0, 6, 0, 1, 0, 9, 4]]
+                for (var row = 0; row < 9; row++) {
+                    for (var col = 0; col < 9; col++){
+                        if (original_grid[row][col] != 0) {
+                            const cell = document.getElementById([row+1,col+1].toString());
+                            cell.value = original_grid[row][col].toString();
+                            cell.setAttribute('disabled', 'disabled');
+                            cell.style.backgroundColor = "#d3d3d3";
                         }
-                        sq_row.append(sq_cell)
-                        sq_row.append($('<div class="vr">'))
                     }
-                    table.append(sq_row)
-                    table.append($('<hr>'))
-                }
-                // Appending the table to the HTML body
-                $('body').append(table);
-
-            });
+                } 
+            })
         </script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     </head>
-    <body class="bg-info">
-        <h1 class="display-1 text-center">Sudoku</h1>
+    <body class="bg-dark">
+        <h1 class="display-1 text-center text-white">Sudoku</h1>
+        <div class="container"></div>
+        <br>
+        <div class="container-fluid">
+            <div class="row g-3 mx-3">
+                <div class="col">
+                    <select class="form-select form-control">
+                        <option selected>Select Level</option>
+                        <option value="1">Easy</option>
+                        <option value="2">Medium</option>
+                        <option value="3">Hard</option>
+                        <option value="4">Evil</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md">
+                    <button type="submit" class="form-control btn btn-primary">New Board</button>
+                </div>
+                <div class="col-12 col-md">
+                    <button type="submit" class="form-control btn btn-danger">Clear Board</button>
+                </div>
+                <div class="col-12 col-md">
+                    <button type="submit" class="form-control btn btn-success">Check</button>
+                </div>
+            </div>
+        </div>
+        <br>
     </body>
 </html>
