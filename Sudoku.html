@@ -6,7 +6,9 @@
         <script src="sudoku/update_grid.js"></script>
         <script>
             $(document).ready(function(){
+                alert("hello")
                 create_grid();
+                alert("hi")
                 let base_grid = update_grid(1, null, false);
                 document.getElementById("clear").onclick = function () { 
                     base_grid = update_grid(1, base_grid, true);
