@@ -1,4 +1,4 @@
-$(document).ready(function(){
+function create_grid(){
     // Creating a table dynamically
     // var table = $('<table class="table-responsive">');
     var table = $('<table class="table-fluid" align="center">');
@@ -27,4 +27,4 @@ $(document).ready(function(){
     }
     // Appending the table to the HTML body
     $('div.container-fluid:first').append(table);
-});
+};
