@@ -4,7 +4,14 @@ function update_grid(level, current_grid, clear_grid){
     if (clear_grid == true) {
         new_grid = current_grid
     } else {
-        new_grid = [[0, 0, 1, 0, 0, 0, 0, 0, 0], [0, 0, 7, 0, 0, 0, 0, 0, 9], [0, 6, 0, 0, 0, 2, 0, 0, 0], [0, 0, 0, 2, 8, 0, 0, 0, 0], [0, 8, 0, 0, 0, 0, 0, 0, 6], [0, 0, 0, 1, 0, 9, 8, 0, 0], [9, 0, 0, 0, 0, 5, 0, 7, 0], [0, 0, 0, 3, 9, 8, 6, 5, 0], [5, 0, 0, 6, 0, 1, 0, 9, 4]]
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open("POST", "http://cogninotes.pythonanywhere.com/generate", false);
+        xmlHttp.setRequestHeader("Content-Type", "application/json");
+        
+        var data = { 'level': level };
+        xmlHttp.send(JSON.stringify(data));
+
+        new_grid = JSON.parse(xmlHttp.response)["success"];
     }
 
     for (var row = 0; row < 9; row++) {
@@ -17,6 +24,7 @@ function update_grid(level, current_grid, clear_grid){
             } else {
                 cell.value = ""
                 cell.disabled = false;
+                cell.style.backgroundColor = "#ffffff";
             }
         }
     }

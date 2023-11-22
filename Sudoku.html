@@ -10,7 +10,14 @@
                 let base_grid = update_grid(1, null, false);
                 document.getElementById("clear").onclick = function () { 
                     base_grid = update_grid(1, base_grid, true);
-                 };
+                };
+                document.getElementById("new").onclick = function () {
+                    if (document.getElementById("level").value == 0) {
+                        alert("Please select a difficulty level!");
+                    } else {
+                        base_grid = update_grid(document.getElementById("level").value, null, false);
+                    }
+                };
             })
         </script>
     </head>
@@ -21,7 +28,7 @@
         <div class="container-fluid px-12 pt-3">
             <div class="row g-4">
                 <div class="col-lg-3 col-xs-12">
-                    <select class="form-select">
+                    <select id="level" class="form-select">
                         <option selected value="0">Select Level</option>
                         <option value="1">Easy</option>
                         <option value="2">Medium</option>
@@ -30,7 +37,7 @@
                     </select>
                 </div>
                 <div class="col-lg-3 col-xs-12">
-                    <button type="submit" class="form-control btn btn-primary">New Board</button>
+                    <button id="new" type="submit" class="form-control btn btn-primary">New Board</button>
                 </div>
                 <div class="col-lg-3 col-xs-12">
                     <button id="clear" type="submit" class="form-control btn btn-danger">Clear Board</button>
